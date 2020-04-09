@@ -1,0 +1,27 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">首页</view>
+</cu-custom>
+
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="margin-xl padding-xl bg-white radius shadow shadow-lg">
+  <view class="flex justify-center">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'> 获取头像昵称 </button>
+    <block wx:else>
+      <view class='text-center'>
+        <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
+        <view class="padding">{{userInfo.nickName}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="text-center margin-top">
+  <text class="text-grey text-xl">{{motto}}</text>
+</view>

@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/tabs/tabs",
+    "pages/tabs/tab1/tab1",
+    "pages/tabs/tab2/tab2",
+    "pages/tabs/tab3/tab3",
+    "pages/tabs/tab4/tab4"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "common/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}
